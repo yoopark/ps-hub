@@ -1,7 +1,3 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-# miis = lambda: map(int, input().split())
-
 def manacher(s):
     s = "#" + "#".join(list(s)) + "#"
     len_s = len(s)
@@ -12,7 +8,7 @@ def manacher(s):
         if i <= r:
             j = c - (i-c)
             ret[i] = min(ret[j], r-i)
-        
+
         while 0 <= i-ret[i]-1 and i+ret[i]+1 < len_s:
             if s[i-ret[i]-1] != s[i+ret[i]+1]:
                 break
