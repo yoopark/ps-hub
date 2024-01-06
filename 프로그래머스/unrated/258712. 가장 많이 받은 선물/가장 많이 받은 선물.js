@@ -39,10 +39,10 @@ const initializeGiftTable = (friends, gifts) => {
     for (const gift of gifts) {
         const [giver, receiver] = gift.split(' ');
 
-        const giverIndex = friendsNo[giver];
-        const receiverIndex = friendsNo[receiver];
+        const giverIdx = friendsNo[giver];
+        const receiverIdx = friendsNo[receiver];
 
-        giftTable[giverIndex][receiverIndex]++;
+        giftTable[giverIdx][receiverIdx]++;
     }
     
     return giftTable;
