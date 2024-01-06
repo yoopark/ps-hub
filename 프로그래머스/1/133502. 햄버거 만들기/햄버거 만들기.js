@@ -18,7 +18,7 @@ const solution = (ingredient) => {
         stack.push(elem);
         
         while (stack.length >= 4 && equal(stack.slice(-4), [1, 2, 3, 1])) {
-            stack.splice(-4);
+            stack.splice(-4); // stack = stack.slice(0, -4); TLE
             answer++;
         }
     }
