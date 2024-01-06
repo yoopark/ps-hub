@@ -1,7 +1,5 @@
-const START = 0, END = 1;
-
 const solution = (targets) => {
-    targets.sort((a, b) => a[END] - b[END]);
+    targets.sort((a, b) => a[1] - b[1]);
 
     let answer = 0;
     let prevEnd = -1;
