@@ -2,11 +2,11 @@ const { readFileSync } = require('fs');
 
 const input = readFileSync('/dev/stdin').toString().trim().split('\n');
 
-const n = +input[0];
+const n = Number(input[0]);
 
 const nums = [1, 2, 3];
 
-const isValid = (str) => {
+const checkIsGoodSequence = (str) => {
   for (let i = 1; i <= Math.floor(str.length / 2); i++) {
     if (str.slice(-i) === str.slice(-2 * i, -i)) {
       // 나쁜 수열
@@ -18,7 +18,7 @@ const isValid = (str) => {
 
 const solution = (n) => {
   const bt = (str) => {
-    if (!isValid(str)) {
+    if (!checkIsGoodSequence(str)) {
       return null;
     }
 
