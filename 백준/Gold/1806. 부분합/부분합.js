@@ -23,17 +23,13 @@ const solution = (n, s, arr) => {
   let [left, right] = [0, 1];
   let answer = Infinity;
 
-  while (true) {
+  while (right <= n) {
     const sum = acc[right] - acc[left];
 
     if (sum >= s) {
       answer = Math.min(answer, right - left);
       left++; // 차를 줄임
     } else {
-      if (right === n) {
-        break;
-      }
-
       right++; // 차를 늘림
     }
   }
